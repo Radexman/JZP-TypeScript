@@ -1,10 +1,10 @@
-const inputOne: HTMLInputElement = document.querySelector('#inputOne');
-const inputTwo: HTMLInputElement = document.querySelector('#inputTwo');
-const button = document.querySelector('#button');
+// <li>
+// 	<label for="task-1">Wyrzucić śmieci</label>
+// 	<input type="checkbox" id="task-1" name="Wyrzucić śmieci" />
+// </li>
 
-const add = (valueOne: number, valueTwo: number): number => valueOne + valueTwo;
+// Wyrzucić śmieci
+// Pójść na siłownię
+// Nakarmić koty
 
-button.addEventListener('click', () => {
-	const sum = add(Number(inputOne.value), Number(inputTwo.value));
-	console.log(sum);
-});
+const tasks = ['Wyrzucić śmieci', 'Pójść na siłownię', 'Nakarmić koty'];

@@ -1,9 +1,9 @@
 "use strict";
-const inputOne = document.querySelector('#inputOne');
-const inputTwo = document.querySelector('#inputTwo');
-const button = document.querySelector('#button');
-const add = (valueOne, valueTwo) => valueOne + valueTwo;
-button.addEventListener('click', () => {
-    const sum = add(Number(inputOne.value), Number(inputTwo.value));
-    console.log(sum);
-});
+// <li>
+// 	<label for="task-1">Wyrzucić śmieci</label>
+// 	<input type="checkbox" id="task-1" name="Wyrzucić śmieci" />
+// </li>
+// Wyrzucić śmieci
+// Pójść na siłownię
+// Nakarmić koty
+const tasks = ['Wyrzucić śmieci', 'Pójść na siłownię', 'Nakarmić koty'];
