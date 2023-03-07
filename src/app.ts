@@ -1,6 +1,7 @@
 const taskNameInputElement: HTMLInputElement = document.querySelector('#name');
 const addButtonElement: HTMLButtonElement = document.querySelector('button');
 const tasksContainerElement: HTMLElement = document.querySelector('.tasks'); 
+const categoriesContainerElement: HTMLElement = document.querySelector('.categories');
 
 type Category = 'general' | 'gym' | 'work' | 'hobby';
 
@@ -11,7 +12,7 @@ interface Task {
 	category?: 'general' | 'gym' | 'work' | 'hobby';
 }
 
-const categories: string[] = ['general', 'gym', 'work', 'hobby'];
+const categories: Category[] = ['general', 'gym', 'work', 'hobby'];
 
 const tasks: Task[] = [
 	{name: 'Wyrzucić śmieci', done: false, category: 'work'},
@@ -44,6 +45,23 @@ const render = () => {
 	})
 }
 
+const renderCategories = () => {
+	categories.forEach(category => {
+		const categoryElement: HTMLElement = document.createElement('li');
+		const radioInputElement: HTMLInputElement = document.createElement('input');
+		radioInputElement.type = 'radio';
+		radioInputElement.name = 'category';
+		radioInputElement.value = category;
+		radioInputElement.id = `category-${category}`;
+		const labelElement: HTMLLabelElement = document.createElement('label');
+		labelElement.setAttribute('for', `category-${category}`); 
+		labelElement.innerText = category;
+		categoriesContainerElement.appendChild(categoryElement);
+		categoryElement.appendChild(radioInputElement);
+		categoryElement.appendChild(labelElement);
+	})
+}
+
 const addTask = (task: Task) => {
 	tasks.push(task);
 }
@@ -56,4 +74,5 @@ addButtonElement.addEventListener('click', (e: Event) => {
 	render();
 })
 addTask({name: 'Zrobić klatę', category: 'gym', done: false });
+renderCategories();
 render();
