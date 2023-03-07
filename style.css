@@ -64,8 +64,6 @@ button:hover {
     margin-right: 8px;
 }
 
-.tasks {}
-
 .tasks input {
     margin-left: 8px;
 }
@@ -80,5 +78,6 @@ button:hover {
 }
 
 .work {
+    color: darkred;
     text-decoration: underline;
 }
